@@ -1,11 +1,13 @@
 # Build artifacts
-/pkg/
-/src/
 /*.pkg.tar.zst
 /*.tar.zst
+/pkg/
+/src/
 
 # Optional or temporary
 *.log
 *.patch
-install
+*.tar.gz
+*.whl
 fix-imports.bash
+install

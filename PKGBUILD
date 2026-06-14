@@ -27,16 +27,22 @@ depends=(
     'python-typing_extensions'
     'python-websocket-client'
 )
+makedepends=(
+    'python-build'
+    'python-hatch-vcs'
+    'python-hatchling'
+    'python-installer'
+)
 source=(
     "google_colab_cli-$pkgver.tar.gz::https://files.pythonhosted.org/packages/source/g/google-colab-cli/google_colab_cli-$pkgver.tar.gz"
 )
-sha256sums=('SKIP')
-
+sha256sums=(
+    'edded4f6453620b83c8ff4b0a6a0bf9da20f1f3c247ddfa7eecdc213561a1aa2'
+)
 build() {
     cd "google_colab_cli-$pkgver"
     python -m build --wheel --no-isolation
 }
-
 package() {
     cd "google_colab_cli-$pkgver"
     python -m installer --destdir="$pkgdir" dist/*.whl
