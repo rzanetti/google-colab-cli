@@ -1,0 +1,39 @@
+pkgname=colab-cli
+pkgver=0.5.11
+pkgrel=1
+pkgdesc="CLI for interacting with Google Colab."
+arch=('x86_64')
+url="https://github.com/googlecolab/google-colab-cli"
+license=('Apache-2.0')
+depends=(
+    'python'
+    'python-click'
+    'python-filelock'
+    'python-google-auth-oauthlib'
+    'python-google-auth'
+    'python-jupyter-client'
+    'jupyter-nbformat'
+    'python-packaging'
+    'python-prompt_toolkit'
+    'python-pydantic'
+    'python-pygments'
+    'python-requests'
+    'python-rich'
+    'python-typer'
+    'python-typing_extensions'
+    'python-websocket-client'
+)
+source=(
+    "google_colab_cli-$pkgver.tar.gz::https://files.pythonhosted.org/packages/source/g/google-colab-cli/google_colab_cli-$pkgver.tar.gz"
+)
+sha256sums=('SKIP')
+
+build() {
+  cd "google_colab_cli-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "google_colab_cli-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+}

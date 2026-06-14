@@ -1,2 +1,3 @@
-# colab-cli
-A command-line interface for Google Colab (AUR package wrapper).
+# Google Colab CLI PKGBUILD
+
+A command-line interface for Google Colab (AUR `PKGBUILD` package wrapper).

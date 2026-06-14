@@ -1,0 +1,12 @@
+# Build artifacts
+/pkg/
+/src/
+/*.pkg.tar.zst
+/*.tar.zst
+
+# Optional or temporary
+*.log
+*.patch
+install
+fix-imports.bash
+REFERENCES.md
