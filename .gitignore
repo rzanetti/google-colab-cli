@@ -4,10 +4,11 @@
 /pkg/
 /src/
 
-# Optional or temporary
+# Downloaded sources
+/*.tar.gz
+/*.whl
+
+# Temporary files
 *.log
-*.patch
-*.tar.gz
-*.whl
-fix-imports.bash
 install
+fix-imports.bash
